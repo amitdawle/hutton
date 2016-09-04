@@ -96,4 +96,41 @@ f2 x = 2 * x
 ```  
 Both the functions produce same output for same input even though they are defined differently. f1 and f2 are effectively equal and we can substitute one for another.
   
-
+#### Chapter 4
+1. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter4.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter4Spec.hs).
+2. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter4.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter4Spec.hs).
+3. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter3.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter3Spec.hs).
+4. For (||)
+  ```
+  True || True = True
+  True || False = True
+  False || True = True
+  False || False = False
+  
+  ---- Same as
+  False || False = False
+  _ || _ = True
+ ```
+5. Meaning of pattern matching definition 
+  ```
+  True && True = True
+  _ && _ = False
+  
+  -- With conditionals
+  
+  if (a) then (if (b) then b else False) else False
+  ```
+6.  Meaning of pattern matching definition 
+  ```
+  True && b = b
+  False && _ = False
+  
+  -- With conditionals
+  
+  if (a) then b else False
+  ```
+7. mult :: Int -> Int -> Int -> Int
+   mult x y z = x * y * z
+ ```
+ mult = \x -> (\y -> (\z -> x * y * z ))
+ ```
