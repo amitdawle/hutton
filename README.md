@@ -32,9 +32,9 @@ My solutions to the exercises from the book https://www.amazon.com/Programming-H
  
 ```
 
-3. See source and the corresponding test.
+3. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter1.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter1Spec.hs).
 
-4. See source and the corresponding test.
+4. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter1.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter1Spec.hs).
 
 5. Replacing <= with < in qsort will eliminate duplicates and will lead to an incorrect result
 ```
