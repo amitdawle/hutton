@@ -88,7 +88,8 @@ My solutions to the exercises from the book https://www.amazon.com/Programming-H
   ```
 4. Verify types above are correct (they are)
 5. In general we do not have Eq for function types as this would mean we need to define instances for every possible function type. Also to define Eq, we may have to test the entire domain for the functions to see if they map to exactly the same values in the co-domain.
-5.b Consider two functions
+
+(5b) Consider two functions
 ```
 f1 x = x + x
 f2 x = 2 * x 
