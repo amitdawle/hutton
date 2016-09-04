@@ -42,6 +42,7 @@ qsort1 [2,2,3,1,1] => [1,2,3]
 ```
 
 #### Chapter 2
+1. To be done in GHCi
 
 2. Parenthesise
 - 2 ^ 3 * 4 => (2^3) * 4
