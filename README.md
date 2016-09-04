@@ -45,6 +45,7 @@ qsort1 [2,2,3,1,1] => [1,2,3]
 1. To be done in GHCi
 
 2. Parenthesise
+
 2 ^ 3 * 4 => (2^3) * 4
 ```
 Prelude> 2^3*4 
@@ -60,7 +61,4 @@ Prelude> 2 * 3 + 4 * 5
 Prelude> 2 + 3 * 4 ^ 5
 3074
 ```
-
-
-
 
