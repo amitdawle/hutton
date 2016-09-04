@@ -40,3 +40,26 @@ My solutions to the exercises from the book https://www.amazon.com/Programming-H
 ```
 qsort1 [2,2,3,1,1] => [1,2,3]
 ```
+
+#### Chapter 2
+
+2. Parenthesise
+- 2 ^ 3 * 4 => (2^3) * 4
+```
+Prelude> 2^3*4 
+32
+```
+- 2 * 3 + 4 * 5 => (2 * 3) + ( 4 * 5 )
+```
+Prelude> 2 * 3 + 4 * 5 
+26
+```
+- 2 + 3 * 4 ^ 5 => 2 + (3 * (4 ^ 5))
+```
+Prelude> 2 + 3 * 4 ^ 5
+3074
+```
+
+
+
+
