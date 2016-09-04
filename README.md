@@ -129,8 +129,9 @@ Both the functions produce same output for same input even though they are defin
   
   if (a) then b else False
   ```
-7. mult :: Int -> Int -> Int -> Int
-   mult x y z = x * y * z
- ```
- mult = \x -> (\y -> (\z -> x * y * z ))
- ```
+7. Curried function as lambda
+  ``` 
+      mult :: Int -> Int -> Int -> Int
+      mult x y z = x * y * z
+      mult = \x -> (\y -> (\z -> x * y * z ))
+    ```
