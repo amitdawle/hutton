@@ -62,3 +62,10 @@ Prelude> 2 + 3 * 4 ^ 5
 3074
 ```
 
+3. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter2.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter2Spec.hs).
+
+4. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter2.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter2Spec.hs).
+
+5. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter2.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter2Spec.hs). 
+-- One version uses tail and reverse and behaves slightly differently than the standard init. It does not throw exception for empty list. 
+
