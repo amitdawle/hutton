@@ -41,21 +41,19 @@ My solutions to the exercises from the book https://www.amazon.com/Programming-H
 #### Chapter 2
 1. To be done in GHCi
 2. Parenthesise
-  2 ^ 3 * 4 => (2^3) * 4
-  ```
-  Prelude> 2^3*4 
-  32
-  ```
-  2 * 3 + 4 * 5 => (2 * 3) + ( 4 * 5 )
-  ```
-  Prelude> 2 * 3 + 4 * 5 
-  26
-  ```
-  2 + 3 * 4 ^ 5 => 2 + (3 * (4 ^ 5))
-  ```
-  Prelude> 2 + 3 * 4 ^ 5
-  3074
-  ```
+  ```  
+    2 ^ 3 * 4 => (2^3) * 4
+    Prelude> 2^3*4 
+    32
+  
+    2 * 3 + 4 * 5 => (2 * 3) + ( 4 * 5 )
+    Prelude> 2 * 3 + 4 * 5 
+    26
+  
+    2 + 3 * 4 ^ 5 => 2 + (3 * (4 ^ 5))
+    Prelude> 2 + 3 * 4 ^ 5
+    3074
+    ```
 3. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter2.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter2Spec.hs).
 
 4. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter2.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter2Spec.hs).
@@ -130,8 +128,10 @@ Both the functions produce same output for same input even though they are defin
   if (a) then b else False
   ```
 7. Curried function as lambda
-  ``` 
-      mult :: Int -> Int -> Int -> Int
-      mult x y z = x * y * z
-      mult = \x -> (\y -> (\z -> x * y * z ))
+
     ```
+     mult :: Int -> Int -> Int -> Int
+     mult x y z = x * y * z
+     mult = \x -> (\y -> (\z -> x * y * z ))
+    ``` 
+ 
