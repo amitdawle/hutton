@@ -97,7 +97,7 @@ Both the functions produce same output for same input even though they are defin
 #### Chapter 4
 1. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter4.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter4Spec.hs).
 2. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter4.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter4Spec.hs).
-3. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter3.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter3Spec.hs).
+3. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter4.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter4Spec.hs).
 4. For (||)
   ```
   True || True = True
