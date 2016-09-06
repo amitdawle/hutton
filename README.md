@@ -135,3 +135,17 @@ Both the functions produce same output for same input even though they are defin
      mult = \x -> (\y -> (\z -> x * y * z ))
     ``` 
  
+#### Chapter 4
+1. Sum of squares
+ 
+  ```
+  sum [ x^2 | x<- [1..100]]
+  -- or
+  sum . map (^2) $  [1..100]
+  ```
+2. Grid
+ 
+  ```
+   Prelude> [(x,y)| x <-[0..1], y<-[0..2] ]
+   [(0,0),(0,1),(0,2),(1,0),(1,1),(1,2)]
+  ```
