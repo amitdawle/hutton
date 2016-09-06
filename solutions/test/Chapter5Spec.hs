@@ -46,3 +46,11 @@ spec = describe "Chapter5" $ do
             perfects 10  `shouldBe` [6]
            it "works for large numbers" $ do
             perfects 500 `shouldBe` [6,28,496]            
+
+         describe "Chapter5.positions" $ do
+           it "works for empty list" $ do
+            positions 1 []  `shouldBe` []
+           it "works for small list" $ do
+            positions 'a' "abracadabra"  `shouldBe` [0,3,5,7,10]
+           it "works for when element is not present in list" $ do
+            positions 'v' "abracadabra"  `shouldBe` []

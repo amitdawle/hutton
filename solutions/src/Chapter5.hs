@@ -21,3 +21,11 @@ factors n = [x| x <- [1..n] , n `mod` x == 0]
 
 perfects :: Int -> [Int]
 perfects n = [ x | x <- [1..n] , sum (init (factors x)) == x ]
+
+-- 8
+find :: Eq a => a -> [(a, b)] -> [b]
+find k ts = [v| (k', v) <- ts, k' == k]
+
+-- In terms of find
+positions :: Eq a => a -> [a] -> [Int]
+positions k xs =  find k (zip xs [0..]) 
