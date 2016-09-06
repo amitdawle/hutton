@@ -154,11 +154,12 @@ Both the functions produce same output for same input even though they are defin
 5. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter5.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter5Spec.hs).
 6. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter5.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter5Spec.hs).
 7. Single Generator
-  ```
-   [(x,y) | x<-[1,2], y<-[3,4]]
-   >> [(1,3),(1,4),(2,3),(2,4)]
-   -- Or with concat and nested generators
-   concat [ [(x,y) | y <- [3,4]]  |  x <- [1,2] ]
-   >> [(1,3),(1,4),(2,3),(2,4)]
-  ``` 
+
+   ```
+    [(x,y) | x<-[1,2], y<-[3,4]]
+    >> [(1,3),(1,4),(2,3),(2,4)]
+    -- Or with concat and nested generators
+    concat [ [(x,y) | y <- [3,4]]  |  x <- [1,2] ]
+    >> [(1,3),(1,4),(2,3),(2,4)]
+   ``` 
   
