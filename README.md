@@ -162,4 +162,4 @@ Both the functions produce same output for same input even though they are defin
     concat [ [(x,y) | y <- [3,4]]  |  x <- [1,2] ]
     >> [(1,3),(1,4),(2,3),(2,4)]
    ``` 
-  
+8. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter5.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter5Spec.hs). 
