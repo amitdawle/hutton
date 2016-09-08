@@ -3,7 +3,7 @@ module Chapter4 where
 -- 1 
 halve :: [a] -> ([a],[a]) 
 halve xs = (take mid xs, drop mid xs)
-	     where mid = length xs `div` 2
+         where mid = length xs `div` 2
 
 -- 2
 -- With head and tail
@@ -43,4 +43,4 @@ luhnDouble x = if x > 9 then x - 9 else x
 
 luhn :: Int -> Int -> Int -> Int -> Bool
 luhn a b c d = crc `mod` 10 == 0
-	         where crc = luhnDouble (a * 2)  + b + luhnDouble (c * 2) + d
+             where crc = luhnDouble (a * 2)  + b + luhnDouble (c * 2) + d
