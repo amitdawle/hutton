@@ -54,3 +54,46 @@ spec = describe "Chapter5" $ do
             positions 'a' "abracadabra"  `shouldBe` [0,3,5,7,10]
            it "works for when element is not present in list" $ do
             positions 'v' "abracadabra"  `shouldBe` []
+
+
+         describe "Chapter5.scalarproduct" $ do
+           it "works when first list is empty" $ do
+            scalarproduct [1,2,3] []  `shouldBe` 0
+           it "works for when second list is empty" $ do
+            scalarproduct [] [1,2,3] `shouldBe` 0
+           it "works for small list" $ do
+            scalarproduct [1,2,3] [4,5,6] `shouldBe` 32
+ 
+         describe "Chapter5.encode" $ do
+           it "works when list is empty" $ do
+            encode 3 ""  `shouldBe` ""
+           it "works when list has one element" $ do
+            encode 1 "a"  `shouldBe` "b"
+           it "works for small shift" $ do
+            encode 1 "Hello" `shouldBe` "Ifmmp"
+           it "works for larger shift" $ do
+            encode 10 "ABcd" `shouldBe` "KLmn"
+           it "works for large string" $ do
+            encode 3 "We live in a strange and dangerous world."  `shouldBe` "Zh olyh lq d vwudqjh dqg gdqjhurxv zruog."
+
+
+         describe "Chapter5.decode" $ do
+           it "works when list is empty" $ do
+            decode 3 ""  `shouldBe` ""
+           it "works when list has one element" $ do
+            decode 1 "b"  `shouldBe` "a"
+           it "works for small shift" $ do
+            decode 1 "Ifmmp" `shouldBe` "Hello"
+           it "works for larger shift" $ do
+            decode 10 "KLmn" `shouldBe` "ABcd"
+           it "works for larger string" $ do
+            decode 3 "Zh olyh lq d vwudqjh dqg gdqjhurxv zruog." `shouldBe` "We live in a strange and dangerous world."
+
+
+         describe "Chapter5.crack" $ do
+           it "works when list is empty" $ do
+            crack ""  `shouldBe` ""
+           it "works when list upper and lower case and other characters" $ do
+            crack "Zh olyh lq d vwudqjh dqg gdqjhurxv zruog." `shouldBe` "We live in a strange and dangerous world."
+           it "works when list upper and lower case and other characters like numbers" $ do
+            crack "1. Zh olyh lq d vwudqjh dqg gdqjhurxv zruog." `shouldBe` "1. We live in a strange and dangerous world."
