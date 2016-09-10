@@ -135,7 +135,7 @@ Both the functions produce same output for same input even though they are defin
      mult = \x -> (\y -> (\z -> x * y * z ))
     ``` 
  
-#### Chapter 4
+#### Chapter 5
 1. Sum of squares
  
   ```
@@ -163,3 +163,10 @@ Both the functions produce same output for same input even though they are defin
     >> [(1,3),(1,4),(2,3),(2,4)]
    ``` 
 8. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter5.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter5Spec.hs). 
+
+
+#### Chapter 6
+
+All. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter6.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter6Spec.hs). 
+
+
