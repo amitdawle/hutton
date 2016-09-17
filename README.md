@@ -172,5 +172,6 @@ All. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Cha
 #### Chapter 7
 
 All. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter7.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter7Spec.hs).
+
 9. Ex 9 is tested as part of ex 10.
 
