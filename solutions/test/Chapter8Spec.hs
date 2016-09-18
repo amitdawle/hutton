@@ -58,3 +58,12 @@ spec = describe "Chapter8" $ do
            it "works for a complex expression" $ do
             folde  (id) (+) (Add (Val 1) (Add (Val 2) (Val 3))) `shouldBe` 6
           
+         describe "Chapter8.disjunction" $ do
+           it "works for a proposition A OR (not A) (which is always true)" $ do
+            isTaut (Or (Var 'A') (Not (Var 'A'))) `shouldBe` True
+           
+         describe "Chapter8.equivalence" $ do
+           it "works for : Equivalent (A And B => A)  (A Or Not A)  :  A <=> B " $ do
+            isTaut (Equivalence (Imply (And (Var 'A') (Var 'B')) (Var 'A') )  (Or (Var 'A') (Not (Var 'A')) )  ) `shouldBe` True 
+        
+
