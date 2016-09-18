@@ -173,5 +173,12 @@ All. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Cha
 
 All. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter7.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter7Spec.hs).
 
-9. Ex 9 is tested as part of ex 10.
+Ex 9 is tested as part of ex 10.
+
+#### Chapter 8
+
+All. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter8.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter8Spec.hs).
+
+Exercise 7. As Eq instance Maybe and [] is already in defined, the solution is commented out.
+
 
