@@ -35,3 +35,26 @@ spec = describe "Chapter8" $ do
             occurs 4 (Node (Node (Leaf 2) 3 (Leaf 4)) 5 (Node (Leaf 8) 9 (Leaf 10) )) `shouldBe` True
            it "works for large trees when element is not present" $ do
             occurs 11 (Node (Node (Leaf 2) 3 (Leaf 4)) 5 (Node (Leaf 8) 9 (Leaf 10) )) `shouldBe` False
+
+
+         describe "Chapter8.balanced" $ do
+           it "works for Leaf" $ do
+            balanced (Leaf2 1) `shouldBe` True
+           it "works for a balanced tree" $ do
+            balanced (Node2 (Leaf2 1) (Node2 (Leaf2 3) (Leaf2 4))) `shouldBe` True
+           it "works unbalanced trees" $ do
+            balanced (Node2 (Node2 (Node2 (Leaf2 1) (Leaf2 2)) (Leaf2 4)) (Leaf2 10) ) `shouldBe` False
+          
+  
+         describe "Chapter8.balance" $ do
+           it "works for one element" $ do
+            balance [1] `shouldBe` Leaf2 1
+           it "works for a list" $ do
+            balance [1,3,4] `shouldBe` (Node2 (Leaf2 1) (Node2 (Leaf2 3) (Leaf2 4)))
+
+         describe "Chapter8.folde" $ do
+           it "works for one element" $ do
+            folde (id) (+) (Val 1) `shouldBe` 1
+           it "works for a complex expression" $ do
+            folde  (id) (+) (Add (Val 1) (Add (Val 2) (Val 3))) `shouldBe` 6
+          
