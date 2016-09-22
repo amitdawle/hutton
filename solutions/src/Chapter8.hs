@@ -139,24 +139,49 @@ isTaut p = and [ eval s p | s <- substs p]
 
 -----------
 
-data Expr = Val Int | Add Expr Expr
+data Expr = Val Int | Add Expr Expr | Mult Expr Expr 
 
 folde :: (Int -> a) -> (a -> a -> a) -> Expr -> a
-folde f _ (Val i)   = f i 
-folde f g (Add a b) = g (folde f g a) (folde f g b)
-
-{--
-instance Eq a => Eq (Maybe a) where
-	Nothing  == Nothing  = True
-	(Just x) == (Just y) = x == y
-	_        == _        = False 
+folde f _ (Val i)    = f i 
+folde f g (Add a b)  = g (folde f g a) (folde f g b)
 
 
-instance Eq a => Eq [a] where
-	[]     == []  = True
-	(x:xs) == (y:ys) = (x == y ) && ( xs == ys  ) 
-	_      == _    = False 
---}
+eval_0 :: Expr -> Int
+eval_0  = folde (id) (+)
+
+
+size :: Expr -> Int
+size  = folde (\x -> 1) (+)
+
+
+
+-- Sublime hate block comments!
+-- instance Eq a => Eq (Maybe a) where
+--	Nothing  == Nothing  = True
+--	(Just x) == (Just y) = x == y
+--	_        == _        = False 
+
+
+-- instance Eq a => Eq [a] where
+--	[]     == []  = True
+--	(x:xs) == (y:ys) = (x == y ) && ( xs == ys  ) 
+--	_      == _    = False 
+--
+
+
+value :: Expr -> Int
+value (Val i)    = i 
+value (Add a b)  = (+) (value a) (value b) 
+value (Mult a b) = (*) (value a) (value b)
+
+
+
+
+
+
+
+
+
 
 
 
