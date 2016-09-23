@@ -92,10 +92,10 @@ p5 :: Prop
 p5 = Or (Var 'A') (Not (Var 'A'))  -- A || (not) A -> is always true
 
 p6 :: Prop
-p6 = Equivalence (Var 'A') (Var 'A')  -- A || (not) A -> is always true
+p6 = Equivalence (Var 'A') (Var 'A')  -- A <=> A   -> is always true
 
 p7 :: Prop
-p7 = Equivalence (Or (Var 'A') (Var 'B')) (Or (Var 'B') (Var 'A'))  -- A || (not) A -> is always true
+p7 = Equivalence (Or (Var 'A') (Var 'B')) (Or (Var 'B') (Var 'A'))  -- A OR B <=> A OR B -> is always true
 
 
 
@@ -155,7 +155,7 @@ size  = folde (\x -> 1) (+)
 
 
 
--- Sublime hate block comments!
+-- Sublime hates block comments!
 -- instance Eq a => Eq (Maybe a) where
 --	Nothing  == Nothing  = True
 --	(Just x) == (Just y) = x == y
