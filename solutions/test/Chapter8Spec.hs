@@ -72,6 +72,15 @@ spec = describe "Chapter8" $ do
          describe "Chapter8.equivalence" $ do
            it "works for : Equivalent (A And B => A)  (A Or Not A)  :  A <=> B " $ do
             isTaut (Equivalence (Imply (And (Var 'A') (Var 'B')) (Var 'A') )  (Or (Var 'A') (Not (Var 'A')) )  ) `shouldBe` True 
+
+
+         describe "Chapter8.value2" $ do
+           it "works for one element" $ do
+            value2  (Val 1) `shouldBe` 1
+           it "works for a complex expression" $ do
+            value2 (Add (Val 1) (Add (Val 2) (Val 3))) `shouldBe` 6
+           it "works for a complex expression" $ do
+            value2 (Mult (Val 2) (Add (Val 4) (Val 3))) `shouldBe` 14
         
 
          describe "Chapter8.value" $ do

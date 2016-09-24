@@ -99,16 +99,16 @@ p7 = Equivalence (Or (Var 'A') (Var 'B')) (Or (Var 'B') (Var 'A'))  -- A || (not
 
 
 
-eval :: Subst -> Prop  -> Bool
-eval _ (Const b)      = b
-eval xs (Var c)       =  find c xs
-eval s  (Not p)       = not (eval s p)
-eval s  (And p1 p2)   = (eval s p1) && (eval s p2)
-eval s  (Or p1 p2)    = (eval s p1) || (eval s p2)
-eval s  (Imply p1 p2) = (not a) || b
-                        where a = (eval s p1) 
-                              b = (eval s p2)  
-eval s  (Equivalence p1 p2) = (eval s (Imply p1 p2)) && (eval s (Imply p2 p1)) 
+eval_0 :: Subst -> Prop  -> Bool
+eval_0 _ (Const b)      = b
+eval_0 xs (Var c)       =  find c xs
+eval_0 s  (Not p)       = not (eval_0 s p)
+eval_0 s  (And p1 p2)   = (eval_0 s p1) && (eval_0 s p2)
+eval_0 s  (Or p1 p2)    = (eval_0 s p1) || (eval_0 s p2)
+eval_0 s  (Imply p1 p2) = (not a) || b
+                        where a = (eval_0 s p1) 
+                              b = (eval_0 s p2)  
+eval_0 s  (Equivalence p1 p2) = (eval_0 s (Imply p1 p2)) && (eval_0 s (Imply p2 p1)) 
 
 
 bools :: Int -> [[Bool]]
@@ -133,7 +133,7 @@ substs p = [ zip vs bs | bs <- bools t ]
 
 
 isTaut :: Prop -> Bool
-isTaut p = and [ eval s p | s <- substs p]
+isTaut p = and [ eval_0 s p | s <- substs p]
 
 
 
@@ -146,13 +146,34 @@ folde f _ (Val i)    = f i
 folde f g (Add a b)  = g (folde f g a) (folde f g b)
 
 
-eval_0 :: Expr -> Int
-eval_0  = folde (id) (+)
+eval_1 :: Expr -> Int
+eval_1  = folde (id) (+)
 
 
 size :: Expr -> Int
 size  = folde (\x -> 1) (+)
 
+type Control = [Op]
+
+data Op = EVAL_ADD Expr | EVAL_MULT Expr | ADD Int | MULT Int
+
+
+
+eval :: Expr -> Control -> Int
+eval (Val n)    c = exec c n
+eval (Add x y)  c = eval x (EVAL_ADD y : c)
+eval (Mult x y) c = eval x (EVAL_MULT y : c)
+
+
+exec :: Control -> Int -> Int
+exec [] n = n 
+exec (EVAL_ADD a:as) n = eval a ( (ADD n) : as)  
+exec (EVAL_MULT a:as) n = eval a ( (MULT n) : as)  
+exec (ADD a:as) n = exec as (a + n) 
+exec (MULT a:as) n = exec as (a * n)
+
+value2 :: Expr -> Int
+value2 e = eval e []   
 
 
 -- Sublime hate block comments!
@@ -168,20 +189,7 @@ size  = folde (\x -> 1) (+)
 --	_      == _    = False 
 --
 
-
 value :: Expr -> Int
 value (Val i)    = i 
 value (Add a b)  = (+) (value a) (value b) 
 value (Mult a b) = (*) (value a) (value b)
-
-
-
-
-
-
-
-
-
-
-
-
