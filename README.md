@@ -182,3 +182,8 @@ All. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Cha
 Exercise 7. As Eq instance Maybe and [] is already in defined, the solution is commented out.
 
 
+#### Chapter 9
+
+All. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter9.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter9Spec.hs).
+
+
