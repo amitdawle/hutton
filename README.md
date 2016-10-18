@@ -184,11 +184,11 @@ Exercise 7. As Eq instance Maybe and [] is already in defined, the solution is c
 
 #### Chapter 9
 
-1,2,6. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter9.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter9Spec.hs).
+1,2 & 6. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter9.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter9Spec.hs).
 
-3. It ends in an infinite loop. -- argument to exprs is always the original string.
+Exercise 3. It ends in an infinite loop. -- argument to exprs is always the original string.
 
-4. Note : This works only with valid function as defined in page 112 and not with the final definition as on page 119.
+Exercise 4. Note : This works only with valid function as defined in page 112 and not with the final definition as on page 119.
 
 ```
     print(length $ concatMap (Chapter9.eval) $  concatMap (exprs) $ choices [1,3,7,10,25,50])
