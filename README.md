@@ -203,8 +203,8 @@ eval (App o l r) = [apply o x y | x <- eval l , y <- eval r , valid o x y ]
 Exercise 5. 
 ```
 valid :: Op -> Int -> Int -> Bool
-valid Add x y = True -- y /= 0 && x /= 0
-valid Sub x y =  True -- y /= 0 && x /= 0  -- True
-valid Mul x y = True -- y /= 0 && x /= 0 -- True
+valid Add x y = True 
+valid Sub x y =  True 
+valid Mul x y = True 
 valid Div x y = y /= 0 && x `mod` y == 0
 ```
