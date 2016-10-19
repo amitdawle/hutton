@@ -186,7 +186,7 @@ Exercise 7. As Eq instance Maybe and [] is already in defined, the solution is c
 
 1,2 & 6. See [src](https://github.com/amitdawle/hutton/blob/master/solutions/src/Chapter9.hs) and the corresponding [test](https://github.com/amitdawle/hutton/blob/master/solutions/test/Chapter9Spec.hs).
 
-Exercise 3. It ends in an infinite loop. -- argument to exprs is always the original string.
+C It ends in an infinite loop. -- argument to exprs is always the original string.
 
 Exercise 4. Note : This works only with valid function as defined in page 112 and not with the final definition as on page 119.
 
@@ -200,6 +200,11 @@ If we comment out validity check from the line, we get 33,665,406
 eval (App o l r) = [apply o x y | x <- eval l , y <- eval r , valid o x y ]
 ```
 
-
-
-
+Exercise 5. 
+```
+valid :: Op -> Int -> Int -> Bool
+valid Add x y = True -- y /= 0 && x /= 0
+valid Sub x y =  True -- y /= 0 && x /= 0  -- True
+valid Mul x y = True -- y /= 0 && x /= 0 -- True
+valid Div x y = y /= 0 && x `mod` y == 0
+```
