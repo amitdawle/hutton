@@ -37,6 +37,16 @@ getChars n = pure (:) <*> getChar <*> getChars (n - 1 )
 --     --  g x a => b
 
 
+--5
+-- pure id <*> x = x 
+---- x is Applicative
+
+-- pure (g x) = pure g <*> pure x
+
+
+  
+
+
 -- 6
 -- instance Monad ((->) a) where 
 --      --  return :: a -> f a
@@ -49,13 +59,11 @@ getChars n = pure (:) <*> getChar <*> getChars (n - 1 )
 
 
 
-data Expr a = Var a | Val Int | Add (Expr a) (Expr a) deriving (Show)
+data Expr a = Var a | Add (Expr a) (Expr a) deriving (Show)
 
 instance Functor Expr where
     fmap f (Var a) = Var (f a)
-    fmap f (Val i) = Val i 
     fmap f (Add a b) = Add (fmap f a) (fmap f b)
-
 
 
 instance Applicative Expr where
@@ -63,6 +71,17 @@ instance Applicative Expr where
     -- <*> :: f(a -> b) -> f a -> f b
     (Var f) <*> (Var x) = Var (f x)
     (Var f) <*> (Add a b) = Add (fmap f a) (fmap f b)
+    (Add f g) <*> Var a  = Add (f <*> Var a) (g <*> Var a)
+
+instance Monad (Expr) where
+    return = pure
+    -- (>>=) :: m a  -> (a -> m b) -> m b
+    (Var a)   >>= f   = f a 
+    (Add e1 e2) >>= f   = Add ( (>>=) e1 f) ((>>=) e2 f)
+  
+
+
+
 
 
 
